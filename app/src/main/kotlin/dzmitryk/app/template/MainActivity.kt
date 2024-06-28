@@ -12,8 +12,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import dzmitryk.app.template.ui.hello.Greeting
+import dzmitryk.app.template.ui.hello.RainbowAnnotated
 import dzmitryk.app.template.ui.hello.RainbowColorChangeText
 import dzmitryk.app.template.ui.hello.RainbowColorText
 import dzmitryk.app.template.ui.theme.AppTemplateTheme
@@ -27,21 +27,32 @@ class MainActivity : ComponentActivity() {
             AppTemplateTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     LazyColumn(
-                        modifier = Modifier.fillMaxSize().padding(innerPadding),
-                        horizontalAlignment = Alignment.CenterHorizontally
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding),
+                        horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
                         item {
-                            Box(modifier = Modifier.fillMaxWidth()) {
+                            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
                                 Greeting(text = text)
                             }
                         }
                         item {
-                            Box(modifier = Modifier.fillMaxWidth()) {
-                                RainbowColorChangeText(text = text)
+                            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                                RainbowColorChangeText(
+                                    text = text
+                                )
                             }
                         }
                         item {
-                            Box(modifier = Modifier.fillMaxWidth()) {
+                            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                                RainbowAnnotated(
+                                    text = text
+                                )
+                            }
+                        }
+                        item {
+                            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
                                 RainbowColorText(text = text)
                             }
                         }
